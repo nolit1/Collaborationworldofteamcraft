@@ -20,44 +20,50 @@ import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
-    private List<ListItem> listItems;
-    private Context context;
+    private List<ListItem> mListItems;
+    //private Context context;
 
-    public MyAdapter(List<ListItem> listItems, Context context) {
-        this.listItems = listItems;
-        this.context = context;
+    // Provide a reference to the views for each data item
+    // Complex data items may need more than one view per item, and
+    // you provide access to all the views for a data item in a view holder
+    public class ViewHolder extends RecyclerView.ViewHolder{
+        // each data item is just a string in this case
+        public TextView textViewHead;
+        public ImageView imageView;
+
+        //Может тут надо несколько параметров, так как несколько текстовых полей
+        public ViewHolder(View itemView) {
+            super(itemView);
+            textViewHead = itemView.findViewById(R.id.title);
+            imageView = itemView.findViewById(R.id.image);
+        }
+    }
+
+  //   Provide a suitable constructor (depends on the kind of listItems)
+    public MyAdapter(List<ListItem> mylistItems) {
+        mListItems = mylistItems;
+        //this.context = context;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item, parent, false);
-
         return new ViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(MyAdapter.ViewHolder holder, int position) {
-        final ListItem listItem = listItems.get(position);
-
-        holder.textViewHead.setText(listItem.getHead());
-       // Picasso.with(context).load(listItem.getImageUrl()).placeholder(R.drawable.image).into(holder.imageView);
+        final ListItem listItem = mListItems.get(position);
+        holder.textViewHead.setText(listItem.getmTitle());
+        holder.textViewHead.setText(listItem.getmAuthor());
+        holder.textViewHead.setText(listItem.getmPeopleCount());
+        holder.textViewHead.setText(listItem.getmCount());
+        holder.textViewHead.setText(listItem.getmImage());
+        //Picasso.with(context).load(listItem.getImageUrl()).placeholder(R.drawable.image).into(holder.imageView);
     }
 
     @Override
     public int getItemCount() {
-        return listItems.size();
-    }
-
-    public class ViewHolder extends RecyclerView.ViewHolder{
-
-        public TextView textViewHead;
-      //  public ImageView imageView;
-
-
-        public ViewHolder(View itemView) {
-            super(itemView);
-            textViewHead = itemView.findViewById(R.id.textViewHead);
-         //   imageView = (ImageView) itemView.findViewById(R.id.imageView);
-        }
+        return mListItems.size();
     }
 }

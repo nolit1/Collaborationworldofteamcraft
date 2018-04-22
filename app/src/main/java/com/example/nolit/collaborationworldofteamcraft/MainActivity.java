@@ -27,21 +27,25 @@ import java.util.List;
  * */
 
 
-
-
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
 
 //    private RecyclerView recyclerView;
 //    private RecyclerView.Adapter adapter;
-//    private List<ListItem> listItems;
+    private List<ListItem> listItems;
 //    private SwipeRefreshLayout mSwipeRefreshLayout;
+
+    private RecyclerView mRecyclerView;
+    private RecyclerView.Adapter mAdapter;
+    private RecyclerView.LayoutManager mLayoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+
+        //по умолчанию тут было activity_main, но список у нас в content main
+        setContentView(R.layout.content_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -63,11 +67,22 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-//        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-//        recyclerView.setHasFixedSize(true);
-//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-//
-//        listItems = new ArrayList<>();
+        listItems.add(new ListItem("Title", "Name",
+                "Кол-во участников", "5", R.id.image));
+
+        // use this setting to improve performance if you know that changes
+        // in content do not change the layout size of the RecyclerView
+        mRecyclerView = findViewById(R.id.recyclerView);
+        mRecyclerView.setHasFixedSize(true);
+
+        // use a linear layout manager
+        mLayoutManager = new LinearLayoutManager(this);
+        mRecyclerView.setLayoutManager(mLayoutManager);
+
+
+        // specify an adapter (see also next example)
+        mAdapter = new MyAdapter(listItems);
+        mRecyclerView.setAdapter(mAdapter);
     }
 
     @Override

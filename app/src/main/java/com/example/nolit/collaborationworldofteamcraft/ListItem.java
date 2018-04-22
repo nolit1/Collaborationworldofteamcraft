@@ -8,20 +8,38 @@ package com.example.nolit.collaborationworldofteamcraft;
 //Здесь то, как выглядит один элемент главного списка
 public class ListItem {
 
-    private String head;
-   // private String imageUrl;
+    private String mTitle;
+    private String mAuthor;
+    private String mPeopleCount;
+    private String mCount;
+    private int mImage;
 
-    public ListItem(String head, String imageUrl) {
-        this.head = head;
-       // this.imageUrl = imageUrl;
+    public ListItem(String title, String author, String peopleCount, String count, int image) {
+        mTitle = title;
+        mAuthor = author;
+        mPeopleCount = peopleCount;
+        mCount = count;
+        mImage = image;
     }
 
-
-    public String getHead() {
-        return head;
+    public String getmTitle() {
+        return mTitle;
     }
 
-//    public String getImageUrl() {
-//        return imageUrl;
-//    }
+    public String getmAuthor() {
+        return mAuthor;
+    }
+
+    public String getmPeopleCount() {
+        return mPeopleCount;
+    }
+
+    public String getmCount() {
+        return mCount;
+    }
+
+    public int getmImage() {
+        return mImage;
+    }
+
 }
