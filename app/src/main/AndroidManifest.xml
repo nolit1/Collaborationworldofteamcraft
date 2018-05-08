@@ -31,11 +31,20 @@
 
         <activity
             android:name=".NewPost"
-            android:label="Успех">
+            android:label="Создание запроса">
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".NewPost"/>
+        </activity>
+
+        <activity
+            android:name=".Registration"
+            android:label="Регистрация">
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Login"/>
         </activity>
     </application>
 

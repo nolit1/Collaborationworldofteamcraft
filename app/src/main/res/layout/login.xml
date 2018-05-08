@@ -16,33 +16,43 @@
         android:textSize="40sp"/>
 
     <EditText
+        android:id="@+id/login"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="230dp" />
+        android:layout_marginBottom="221dp"
+        android:ems="30"
+        android:hint="@string/login" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/password"
         android:layout_width="193dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="152dp"
         android:ems="10"
+        android:hint="@string/password"
         android:inputType="textPassword" />
+
+    <!--Добавить действие на кнопку Войти-->
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="75dp"
+        android:onClick="login"
+        android:text="Войти" />
 
     <Button
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="34dp"
-        android:text="Войти"
-        android:onClick="login"/>
-
-    <!--Логин
-        Регистрация
-        -->
+        android:layout_marginBottom="19dp"
+        android:onClick="registration"
+        android:text="Регистрация" />
 
 </RelativeLayout>

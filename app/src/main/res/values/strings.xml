@@ -68,4 +68,6 @@
     <string name="name">Название</string>
     <string name="congratulations">Поздравляем! \n Заявка удачно создана!</string>
     <string name="continueButton">Продолжить</string>
+    <string name="login">Логин</string>
+    <string name="password">Пароль</string>
 </resources>
