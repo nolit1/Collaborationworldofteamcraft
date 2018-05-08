@@ -37,6 +37,15 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             textViewHead = itemView.findViewById(R.id.title);
             imageView = itemView.findViewById(R.id.image);
         }
+        /**
+         * Логин
+         * Регистрация
+         * Главный список
+         * Просмотр записи
+         * Создание
+         * Успех
+         * Личный кабинет (список записей, ответы)
+         */
     }
 
   //   Provide a suitable constructor (depends on the kind of listItems)

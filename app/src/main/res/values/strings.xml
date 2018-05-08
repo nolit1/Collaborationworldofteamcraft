@@ -66,4 +66,6 @@
     <string name="order_summary_email_subject">Just Java order for <xliff:g id="name" example="Amy">%s</xliff:g></string>
     <string name="description">Описание</string>
     <string name="name">Название</string>
+    <string name="congratulations">Поздравляем! \n Заявка удачно создана!</string>
+    <string name="continueButton">Продолжить</string>
 </resources>
