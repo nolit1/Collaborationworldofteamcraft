@@ -17,15 +17,15 @@ public class Registration extends AppCompatActivity {
 
 
     //Функция для получения имени и фамилии в виде строки
-    private String getNameSurname() {
-        EditText nameField = findViewById(R.id.name);
-        Editable nameEditable = nameField.getText();
-
-        EditText nameField1 = findViewById(R.id.surname);
-        Editable nameEditable1 = nameField1.getText();
-
-        return nameEditable.toString()+" "+nameEditable1;
-    }
+//    private String getNameSurname() {
+//        EditText nameField = findViewById(R.id.name);
+//        Editable nameEditable = nameField.getText();
+//
+//        EditText nameField1 = findViewById(R.id.surname);
+//        Editable nameEditable1 = nameField1.getText();
+//
+//        return nameEditable.toString()+" "+nameEditable1;
+//    }
 
     //Функция для получения пароля в виде строки
     private String getLogin() {
@@ -49,13 +49,14 @@ public class Registration extends AppCompatActivity {
     }
 
     //Функция для получения пароля в виде строки
-    private String getContacts() {
-        EditText nameField = findViewById(R.id.contacts);
-        Editable nameEditable = nameField.getText();
-        return nameEditable.toString();
-    }
+//    private String getContacts() {
+//        EditText nameField = findViewById(R.id.contacts);
+//        Editable nameEditable = nameField.getText();
+//        return nameEditable.toString();
+//    }
 
     public void createAccaunt (String name, String login, String Password, String contacts) {
         //функция добавления в БД нового пользователя
     }
+
 }

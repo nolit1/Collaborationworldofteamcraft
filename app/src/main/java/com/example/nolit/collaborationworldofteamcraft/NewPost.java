@@ -32,56 +32,55 @@ public class NewPost extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.new_post);
 
-        phones.add("iPhone 7");
-        phones.add("Samsung Galaxy S7");
-        phones.add("Google Pixel");
-        phones.add("Huawei P10");
-        phones.add("HP Elite z3");
-
-        phonesList = (ListView) findViewById(R.id.phonesList);
-        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_multiple_choice, phones);
-        phonesList.setAdapter(adapter);
-
-        // обработка установки и снятия отметки в списке
-        phonesList.setOnItemClickListener(new AdapterView.OnItemClickListener(){
-            @Override
-            public void onItemClick(AdapterView<?> parent, View v, int position, long id)
-            {
-                // получаем нажатый элемент
-                String phone = adapter.getItem(position);
-                if(phonesList.isItemChecked(position)){
-                    selectedPhones.add(phone);
-                }
-                else{
-
-                    selectedPhones.remove(phone);
-                }
-            }
-        });
+//        phones.add("Руководитель проекта");
+//        phones.add("WEB-дизайнер");
+//        phones.add("WEB-программист");
+//        phones.add("Спонсор");
+//
+//        phonesList = (ListView) findViewById(R.id.phonesList);
+//        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_multiple_choice, phones);
+//        phonesList.setAdapter(adapter);
+//
+//        // обработка установки и снятия отметки в списке
+//        phonesList.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View v, int position, long id)
+//            {
+//                // получаем нажатый элемент
+//                String phone = adapter.getItem(position);
+//                if(phonesList.isItemChecked(position)){
+//                    selectedPhones.add(phone);
+//                }
+//                else{
+//
+//                    selectedPhones.remove(phone);
+//                }
+//            }
+//        });
     }
 
-    public void add(View view){
-
-        EditText phoneEditText = (EditText) findViewById(R.id.phone);
-        String phone = phoneEditText.getText().toString();
-        if(!phone.isEmpty() && phones.contains(phone)==false){
-            adapter.add(phone);
-            phoneEditText.setText("");
-            adapter.notifyDataSetChanged();
-        }
-    }
-    public void remove(View view){
-        // получаем и удаляем выделенные элементы
-        for(int i=0; i< selectedPhones.size();i++){
-            adapter.remove(selectedPhones.get(i));
-        }
-        // снимаем все ранее установленные отметки
-        phonesList.clearChoices();
-        // очищаем массив выбраных объектов
-        selectedPhones.clear();
-
-        adapter.notifyDataSetChanged();
-    }
+//    public void add(View view){
+//
+//        EditText phoneEditText = (EditText) findViewById(R.id.phone);
+//        String phone = phoneEditText.getText().toString();
+//        if(!phone.isEmpty() && phones.contains(phone)==false){
+//            adapter.add(phone);
+//            phoneEditText.setText("");
+//            adapter.notifyDataSetChanged();
+//        }
+//    }
+//    public void remove(View view){
+//        // получаем и удаляем выделенные элементы
+//        for(int i=0; i< selectedPhones.size();i++){
+//            adapter.remove(selectedPhones.get(i));
+//        }
+//        // снимаем все ранее установленные отметки
+//        phonesList.clearChoices();
+//        // очищаем массив выбраных объектов
+//        selectedPhones.clear();
+//
+//        adapter.notifyDataSetChanged();
+//    }
 
     /**
      * This method is called when the plus button is clicked.

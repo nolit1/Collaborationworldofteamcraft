@@ -2,39 +2,39 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white">
+    android:background="#252020">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="16dp"
-        android:text="Регистрация"
+        android:layout_marginTop="38dp"
+        android:text="Присоединяйся
+к нам!"
         android:textAlignment="center"
-        android:textSize="40sp"
-        android:layout_alignParentLeft="true" />
+        android:textColor="#ffffff"
+        android:textSize="40sp" />
 
 
-    <EditText
-        android:id="@+id/name"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="94dp"
-        android:ems="30"
-        android:hint="Имя"/>
+    <!--<EditText-->
+        <!--android:id="@+id/name"-->
+        <!--android:layout_width="200dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginTop="94dp"-->
+        <!--android:ems="30"-->
+        <!--android:hint="Имя"/>-->
 
-    <EditText
-        android:id="@+id/surname"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="150dp"
-        android:ems="30"
-        android:hint="Фамилия" />
+    <!--<EditText-->
+        <!--android:id="@+id/surname"-->
+        <!--android:layout_width="200dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginTop="150dp"-->
+        <!--android:ems="30"-->
+        <!--android:hint="Фамилия" />-->
 
     <EditText
         android:id="@+id/login"
@@ -43,8 +43,10 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="210dp"
-        android:ems="30"
-        android:hint="Логин" />
+        android:ems="25"
+        android:textColor="#ffffff"
+        android:textColorHint="#aeaeae"
+        android:hint="Введите логин" />
 
     <EditText
         android:id="@+id/password"
@@ -53,9 +55,11 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="198dp"
-        android:ems="10"
+        android:ems="45"
+        android:textColorHint="#aeaeae"
         android:hint="Введите пароль"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:textColor="#ffffff"/>
 
     <EditText
         android:id="@+id/password2"
@@ -64,29 +68,33 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="141dp"
-        android:ems="10"
+        android:ems="45"
         android:hint="Повторите пароль"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:textColor="#ffffff"
+        android:textColorHint="#aeaeae"/>
 
-    <!--Добавить действие кнопке-->
+    <!--Добавить действие кнопке, регистрация-->
     <Button
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="19dp"
+        android:background="@drawable/borders"
+        android:textColor="#ffffff"
         android:onClick="login"
         android:text="Создать аккаунт" />
 
-    <EditText
-        android:id="@+id/contacts"
-        android:layout_width="197dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="80dp"
-        android:ems="10"
-        android:hint="контакт для связи"
-        android:inputType="number" />
+    <!--<EditText-->
+        <!--android:id="@+id/contacts"-->
+        <!--android:layout_width="197dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginBottom="80dp"-->
+        <!--android:ems="10"-->
+        <!--android:hint="контакт для связи"-->
+        <!--android:inputType="number" />-->
 
 </RelativeLayout>
