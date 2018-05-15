@@ -2,8 +2,8 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
-    android:layout_width="wrap_content"
-    android:background="@drawable/side_nav_bar"
+    android:layout_width="match_parent"
+    android:background="#252020"
     android:orientation="vertical">
     <!--<ScrollView-->
         <!--android:layout_width="fill_parent"-->
@@ -16,24 +16,24 @@
         android:orientation="vertical">
 
     <!--создание записи-->
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="120dp">
+        <!--<RelativeLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="120dp">-->
 
-            <View
-                android:id="@+id/view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/cardview_dark_background" />
+            <!--<View-->
+                <!--android:id="@+id/view"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:background="@color/cardview_dark_background" />-->
 
-            <android.support.design.widget.FloatingActionButton
-                android:id="@+id/floatingActionButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:clickable="true"
-                android:focusable="true" />
-        </RelativeLayout>
+            <!--<android.support.design.widget.FloatingActionButton-->
+                <!--android:id="@+id/floatingActionButton"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_centerInParent="true"-->
+                <!--android:clickable="true"-->
+                <!--android:focusable="true" />-->
+        <!--</RelativeLayout>-->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -49,40 +49,57 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/name"
-                android:textSize="24sp" />
+            <!--<TextView-->
+                <!--android:textColor="@android:color/white"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="@string/name"-->
+                <!--android:textSize="24sp" />-->
 
             <EditText
                 android:id="@+id/name_field"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/back"
+                android:layout_marginBottom="15dp"
                 android:inputType="textCapSentences"
-                android:textColorHint="@android:color/black" />
+                android:maxLength="300"
+                android:paddingLeft="7dp"
+                android:paddingRight="7dp"
+                android:background="@drawable/borders"
+                android:paddingTop="7dp"
+                android:paddingBottom="7dp"
+                android:hint="@string/name"
+                android:textColorHint="#aeaeae"
+                android:textColor="#ffffff"
+                />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/description"
-                android:textSize="24sp" />
+            <!--<TextView-->
+                <!--android:textColor="@android:color/white"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="@string/description"-->
+                <!--android:textSize="24sp" />-->
 
             <EditText
                 android:id="@+id/description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/back"
+                android:background="@drawable/borders"
                 android:ems="10"
+                android:paddingLeft="7dp"
+                android:paddingRight="7dp"
+
                 android:gravity="top"
                 android:inputType="textMultiLine"
                 android:lines="5"
-
+                android:paddingTop="7dp"
+                android:paddingBottom="7dp"
+                android:textColor="#ffffff"
+                android:hint="С какой целью создается команда?
+Введите необходимую информацию"
                 android:maxLength="300"
-                android:textColorHint="@android:color/black"
-                tools:ignore="LabelFor" />
+                android:textColorHint="#aeaeae"
+                tools:ignore="LabelFor"/>
 
             <!--<TextView-->
             <!--style="HeaderTextStyle"-->
@@ -93,6 +110,7 @@
 
             <TextView
                 style="@style/HeaderTextStyle"
+                android:textColor="@android:color/white"
                 android:text="@string/quantity" />
 
             <LinearLayout
@@ -104,6 +122,8 @@
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:onClick="decrement"
+                    android:background="@drawable/borders"
+                    android:textColor="#ffffff"
                     android:text="-" />
 
                 <TextView
@@ -113,14 +133,17 @@
                     android:paddingLeft="8dp"
                     android:paddingRight="8dp"
                     android:text="@string/initial_quantity_value"
-                    android:textColor="@android:color/black"
-                    android:textSize="16sp" />
+                    android:textColor="#ffffff"
+                    android:textSize="16sp"
+                    />
 
                 <Button
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:onClick="increment"
-                    android:text="+" />
+                    android:text="+"
+                    android:textColor="#ffffff"
+                    android:background="@drawable/borders"/>
 
             </LinearLayout>
 
@@ -144,21 +167,28 @@
                     <Button
                         android:layout_weight="1"
                         android:text="+"
+                        android:textColor="#ffffff"
+                        android:layout_marginRight="7dp"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:onClick="add"/>
+                        android:onClick="add"
+                        android:background="@drawable/borders"
+                        android:layout_marginEnd="7dp" />
                     <Button
                         android:layout_weight="1"
                         android:text="-"
+                        android:textColor="#ffffff"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:onClick="remove"/>
+                        android:onClick="remove"
+                        android:background="@drawable/borders"/>
                 </LinearLayout>
                 <ListView
                     android:choiceMode="multipleChoice"
                     android:id="@+id/phonesList"
                     android:layout_width="match_parent"
-                    android:layout_height="250dp"/>
+                    android:layout_height="250dp"
+                    android:textColor="#ffffff"/>
             </LinearLayout>
             <!--</ScrollView>-->
 
