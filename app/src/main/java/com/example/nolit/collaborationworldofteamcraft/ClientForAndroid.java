@@ -1,5 +1,13 @@
 package com.example.nolit.collaborationworldofteamcraft;
 
+import com.example.nolit.collaborationworldofteamcraft.forMainList.AndroidProjects;
+import com.example.nolit.collaborationworldofteamcraft.forMainList.User;
+import com.example.nolit.collaborationworldofteamcraft.forMainList.Users;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -7,6 +15,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.util.ArrayList;
 
 public class ClientForAndroid implements Runnable {
     private String mServerMessage;
@@ -17,7 +26,7 @@ public class ClientForAndroid implements Runnable {
     private String address;
 
     public ClientForAndroid(Socket server) throws InterruptedException {
-        this.socket=server;
+        this.socket = server;
         Thread thread = new Thread(this, "Net");
         System.out.println("check" + thread);
         thread.start();
@@ -47,6 +56,7 @@ public class ClientForAndroid implements Runnable {
         mServerMessage = null;
     }
 
+
     @Override
     public void run() {
         try {
@@ -66,7 +76,7 @@ public class ClientForAndroid implements Runnable {
                     }
 
                     mServerMessage = mBufferIn.readLine();
-                    if(mServerMessage.equalsIgnoreCase("quit")){
+                    if (mServerMessage.equalsIgnoreCase("quit")) {
                         sendMessage("quit");
                         socket.close();
                     }
@@ -96,24 +106,78 @@ public class ClientForAndroid implements Runnable {
     }
 
 
-
     //в приложение
-    public void   joinProject(String projct){
-        //todo
+
+    /**
+     * получение номера проекта на запрос на присоединении
+     *
+     * @param id
+     */
+
+    public void joinProject(int id) throws JSONException {
+        JSONObject json = new JSONObject();
+        json.put("JsonMessaged", "command");
+        json.put("command", "joinProject");
+        json.put("id", id);
     }
 
-    public String listProject(){
-        String jsonout = null;
-        return jsonout;
+
+    /**
+     * получение определеного проекта по id
+     * возращиние конструктора проекта
+     *
+     * @param id
+     * @return
+     */
+    public AndroidProjects getProject(int id) {
+        AndroidProjects result = new AndroidProjects();
+        return result;
     }
 
 
-    public String search(String json){
-        // TODO: 12.03.2018
-        return json;
+    /**
+     * возвращение тоже самое из поиска только без начальных данных
+     */
+    public ArrayList<AndroidProjects> listProject() throws JSONException {
+        JSONObject jsonout = null;
+        ArrayList<AndroidProjects> result = new ArrayList<>();
+        jsonout.put("command", "listProject");
+        return result;
     }
 
-    public static void createProject(String json){
-        // TODO: 12.03.2018
+    /**
+     * возвращение листа кострукторов проэктов
+     */
+    public AndroidProjects searchProject(String name) throws JSONException {
+        int id = 0;
+        int idLeader = 0;
+        ArrayList<Users> listUsers = new ArrayList<>();
+        JSONObject json = new JSONObject();
+        json.put("name", name);
+        json.put("command", "searchProjects");
+        AndroidProjects result = new AndroidProjects(id, name, idLeader, listUsers);
+        return result;
+    }
+
+
+    public static void createProject(String name, String discript, int numPeople) throws JSONException {
+        JSONObject json = new JSONObject();
+        json.put("JsonMessaged", "command");
+        json.put("command", "create");
+        JSONArray ar = new JSONArray();
+        JSONObject jsonAr = new JSONObject();
+        jsonAr.put("name", name);
+        jsonAr.put("text", discript);
+        jsonAr.put("num", numPeople);
+        //ar.add(jsonAr);
+        json.put("data", ar);
+    }
+
+    public User searchUser(String name) throws JSONException {
+        JSONObject json = new JSONObject();
+        json.put("name", name);
+        json.put("command", "searchUser");
+        User result = new User();
+        return result;
     }
 }

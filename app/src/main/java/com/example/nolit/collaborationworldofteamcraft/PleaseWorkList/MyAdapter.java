@@ -1,6 +1,5 @@
-package com.example.nolit.collaborationworldofteamcraft;
+package com.example.nolit.collaborationworldofteamcraft.PleaseWorkList;
 
-import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +8,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 //import com.squareup.picasso.Picasso;
+
+import com.example.nolit.collaborationworldofteamcraft.ListItem;
+import com.example.nolit.collaborationworldofteamcraft.R;
 
 import java.util.List;
 
@@ -63,11 +65,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(MyAdapter.ViewHolder holder, int position) {
         final ListItem listItem = mListItems.get(position);
-        holder.textViewHead.setText(listItem.getmTitle());
-        holder.textViewHead.setText(listItem.getmAuthor());
-        holder.textViewHead.setText(listItem.getmPeopleCount());
-        holder.textViewHead.setText(listItem.getmCount());
-        holder.textViewHead.setText(listItem.getmImage());
+//        holder.textViewHead.setText(listItem.getmTitle());
+//        holder.textViewHead.setText(listItem.getmAuthor());
+//        holder.textViewHead.setText(listItem.getmCount());
         //Picasso.with(context).load(listItem.getImageUrl()).placeholder(R.drawable.image).into(holder.imageView);
     }
 
